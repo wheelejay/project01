@@ -1,25 +1,23 @@
-User Story:
+## Description
 
 My wife and I want to try some new recipes so we want  a place where we can make a wishlist of  these recipes that includes a link to the website, date the recipe was added to the list, if we have tried the recipe yet and the rating of the recipe.
 
-When you click on the recipe a new page will be brought up where you can make a shopping list of ingredients that will allow you to add, edit or remove items so that you can be prepared before shopping and while you shop you can remove items from the list that you have purchased.
+When you click on the recipe a table below the recipe will be brought up where you can make a shopping list of ingredients that will allow you to add, check off as purchased, edit or remove items so that you can be prepared before shopping and while you shop you can check off or remove items from the list that you have purchased.
 
 I would also like to add a comment section where we can add comments on what we thought of the recipe, as well as a rating system that will display on the page with the listed recipes.
-
-
-# New Project
-
-<!-- This is how you would show a photo -->
-<!-- ![App hero image](/public/assets/img/readme/app.png) -->
-
-## Description
-
-Write something about how your app works
 
 &NewLine;
 &NewLine;
 
 ## How To Use
+
+When you open the page you will see the recipe list and a button at the bottom that says "Add Recipe".
+Click that button to add a recipe to the list of recipes. You can edit this recipe by hitting the "Edit" button. This is where you can add the name of the recipe, the url of the recipe, date added to your list, the rating of the recipe out of 5 and where you can hit a toggle check mark to show that you have tried the recipe.
+
+To make a Shopping list for the recipe hit the "Make Shopping List" button.
+You will then be able to add ingredients to a shopping list each ingredient will have a purchased check mark toggle switch and a remove button. Below the ingredients there will be a recipe comment section where you can make notes of recipes that you have made before, simply hit the "Edit comment" button to be able to type in the comment box. If you wish to delete a comment hit the "Remove comment" button to remove the commment.
+
+You may then add another recipe and continue to fill the recipe list with all your favorite recipes.
 
 ## Table of Contents
 
@@ -36,7 +34,6 @@ Write something about how your app works
       - [Setting and Updating State](#setting-and-updating-state)
     - [Bugs](#bugs)
 - [Future Development](#future-development)
-- [Resources](#resources)
 - [Contact](#contact)
 
 ## Development
@@ -88,16 +85,10 @@ Backend – Node, Express
 
 ### Client
 
-Here you can describe what creates your front end (react using Vite) and highlight bits of code you're proud of
-
 &NewLine;
 &NewLine;
 
 #### Feature You Like
-
-You can highlight features you like
-
-<!-- this is how you make coding snippets -->
 
 ``` js
 import express from 'express';
@@ -125,16 +116,12 @@ ViteExpress.listen(app, port, () => console.log(`Server is listening on http://l
 
 ### Bugs
 
-We're all learning! You can list any issues the app may have, why you think it's happening, and how you might fix it 
+When you click the "Make a Shopping List" button after you have made one already it clear out the old shopping list and makes a new one. I would like to prevent that from happening. Also state gets transfered through the different recipes. If you had a recipe with ingredients and you delete the one above, it will keep the ingredients of the recipe above. This can be fixed by assigning  a unique id to each row.
 
 ### Future Development
 
-You can list anything you want to add! (or didn't have time for 😅)
-
-### Resources
-
-If you use any 3rd party resources, list them here
+More Styling development, I spent a lot of time to get the app functioning and didn't have a lot of time to make it look unique. I also want to move the shopping list to a different page and have it saved to a specific recipe.
 
 ### Contact
 
-If you have any feedback our questions, please reach me by [email](example@outlook.com), [GitHub](https://github.com/MyUserName), or [LinkedIn](https://www.linkedin.com/)!
+If you have any feedback our questions, please reach me by [email](wheeler7591@gmail.com) or [GitHub](https://github.com/wheelejay)!

@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import Recipe from './Componants/Recipe';
+import ShoppingList from './Componants/Shoppinglist';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
+  const [recipes, setRecipes] = useState([]);
+  const addRecipe = () => {
+    const newRecipe = {
+      name: "",
+      url: "",
+      dateAdded: "",
+      rating: "1",
+    };
+    setRecipes([...recipes, newRecipe]);
+  };
+  const updateRecipe = (index, updatedRecipe) => {
+    const newRecipes = [...recipes];
+    newRecipes.splice(index, 1, updatedRecipe);
+    setRecipes(newRecipes);
+  };
+  const removeRecipe = (index) => {
+    const newRecipes = [...recipes];
+    newRecipes.splice(index, 1);
+    setRecipes(newRecipes);
+  };
   return (
-    <>
+    <main>
+      <header>
+        <center>
+        <h1>Recipe List</h1>
+        </center>
+      </header>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <table>
+          <thead>
+            <tr>
+              <th>Tried</th>
+              <th>Recipe Name</th>
+              <th>URL</th>
+              <th>Date Added</th>
+              <th>Rating</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {recipes.map((recipe, index) => (
+              <Recipe
+                key={index}
+                recipe={recipe}
+                onRemove={() => removeRecipe(index)}
+                onUpdate={(updatedRecipe) => updateRecipe(index, updatedRecipe)}
+              />
+            ))}
+          </tbody>
+        </table>
+        <button onClick={addRecipe}>Add Recipe</button>
       </div>
-      <h1>Jordan + Wheeler</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
-
-export default App
